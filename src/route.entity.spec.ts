@@ -37,6 +37,22 @@ describe('Route Teste', () => {
                 { lat: 20, lng: 20 },
                 { lat: 20, lng: 20 },
             ]
-        })
-    })
+        });
+    });
+
+    /** Teste de atualização de título da rota */
+    test('updateTitle method', () => {
+        const routeProps = {
+            title: 'minha rota',
+            startPosition: {lat: 0, lng: 1},   
+            endPosition: {lat: 0, lng: 1},
+            points: []   
+        }
+        const route = new Route(routeProps);
+        
+        // route.updateTitle -> acessando método da class route, a classe está sendo importada acima e dessa forma consigo acessar seus métodos
+        route.updateTitle('title updated')
+        expect(route.title).toBe('title updated'); // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updateTitle para q ele compare de fato se está correto
+    });
+
 })

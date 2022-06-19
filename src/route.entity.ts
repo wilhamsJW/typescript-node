@@ -18,6 +18,19 @@ export class Route {
             points: props.points || []
         }
     }
+
+    /** Todos os metódos abaixo são monitorados pelo jest para testes no arquivo route.entity.spec.ts */
+    updateTitle(title: string){
+        this.title = title
+    }
+    
+    get title() {
+        return this.props.title
+    }
+    
+    private set title(value: string) {
+        this.props.title = value
+    }
 }
 
 const route = new Route({ 
