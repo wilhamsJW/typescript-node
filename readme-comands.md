@@ -26,3 +26,10 @@
     }  
 
  Dessa forma ele irá pegar qq arquivo que tenha typescript e fará a compilação para javascript
+
+ 6. npm install jest @types/jest --save-dev (Instalação da lib jest)
+
+ 7. npm i -D ts-node (
+   ts-node é obrigatório para configurações dos arquivos
+   npm i -D ts-node --> -D é o mesmo que --save-dev, ambos salvam mas indicam q é apenas para desenvolvimento e nunca para produção. e o "i" é o mesmo q install
+   )
