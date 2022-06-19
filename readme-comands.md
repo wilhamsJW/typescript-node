@@ -33,3 +33,6 @@
    ts-node é obrigatório para configurações dos arquivos
    npm i -D ts-node --> -D é o mesmo que --save-dev, ambos salvam mas indicam q é apenas para desenvolvimento e nunca para produção. e o "i" é o mesmo q install
    )
+
+   8. Instalado Extensão "Jest Runner" pelo VSCODE, dentro do arquivo de teste ela mostra dois comandos: "RUN" e "DEBU
+   G" dessa forma é só clikar em "RUN" para executar os testes
