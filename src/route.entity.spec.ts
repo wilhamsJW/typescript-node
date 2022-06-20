@@ -40,7 +40,7 @@ describe('Route Teste', () => {
         // })
 
         /** TESTANDO COM POINTS */
-        // expect e toStrictEqual --> pertecem ao jest
+        // expect e toStrictEqual --> pertecem ao jest, verifica se está igual
         expect(route.props).toStrictEqual({
              ...routeProps,
              points: [
@@ -65,6 +65,17 @@ describe('Route Teste', () => {
             globalRoute.updatePosition(startPosition, endPosition)
             expect(globalRoute.startPosition).toBe(startPosition); // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updatePosition para q ele compare de fato se está correto
             expect(globalRoute.endPosition).toBe(endPosition); 
+
+        });
+
+        /************ Teste update points */
+        test('updatePoints method', () => {
+
+            const points = [{lat: 10, lng: 20}]
+            globalRoute.updatePoints(points)
+            expect(globalRoute.points).toBe(points);    // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updatePosition para q ele compare de fato se está correto
+            expect(globalRoute.points).toHaveLength(1); // toHaveLength -> verifica se de fato existe uma posição
+            expect(globalRoute.points).toStrictEqual(points); // toStrictEqual -> verifica a igualdade
 
         });
 
