@@ -30,7 +30,7 @@ export class Route {
     }
 
     updatePoints(points: LatLng[]){
-        this.points = points,
+        this.points = points
     }
 
     get points() {
