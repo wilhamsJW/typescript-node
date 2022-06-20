@@ -1,6 +1,16 @@
 import { Route, RouteProps } from "./route.entity"
 
 describe('Route Teste', () => {
+
+    const routeProps = {
+        title: 'minha rota',
+        startPosition: {lat: 0, lng: 1},   
+        endPosition: {lat: 0, lng: 1},
+        points: []   
+    }
+    // Usado para simplificar o código em vez de instaciarmos a classe em todos os testes, isntanciamos apenas uma vez e usamos para todos os testes
+    let globalRoute = new Route(routeProps)
+
     test('constructor', () => {
         // Professor fez dessa forma, achei mais complicado
         // const routeProps: RouteProps = {
@@ -40,19 +50,22 @@ describe('Route Teste', () => {
         });
     });
 
-    /** Teste de atualização de título da rota */
-    test('updateTitle method', () => {
-        const routeProps = {
-            title: 'minha rota',
-            startPosition: {lat: 0, lng: 1},   
-            endPosition: {lat: 0, lng: 1},
-            points: []   
-        }
-        const route = new Route(routeProps);
-        
+    /************* Teste de atualização de título da rota */
+    test('updateTitle method', () => {        
         // route.updateTitle -> acessando método da class route, a classe está sendo importada acima e dessa forma consigo acessar seus métodos
-        route.updateTitle('title updated')
-        expect(route.title).toBe('title updated'); // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updateTitle para q ele compare de fato se está correto
+        globalRoute.updateTitle('title updated')
+        expect(globalRoute.title).toBe('title updated'); // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updateTitle para q ele compare de fato se está correto
     });
+
+        /************ Teste update de position */
+        test('updatePosition method', () => {
+
+            const startPosition = {lat: 10, lng: 20}
+            const endPosition = {lat: 30, lng: 40}
+            globalRoute.updatePosition(startPosition, endPosition)
+            expect(globalRoute.startPosition).toBe(startPosition); // Tobe -> é um teste do q ele espera receber, então deve ser igual o q está em route.updatePosition para q ele compare de fato se está correto
+            expect(globalRoute.endPosition).toBe(endPosition); 
+
+        });
 
 })
