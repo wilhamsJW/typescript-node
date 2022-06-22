@@ -1,4 +1,4 @@
-type LatLng = {lat: Number, lng: number}
+export type LatLng = {lat: Number, lng: number}
 
 export type RouteProps = {
      title: string,

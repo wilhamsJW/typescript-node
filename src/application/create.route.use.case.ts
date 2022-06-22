@@ -3,7 +3,7 @@ import { RouteRepositoryInterface } from "../domain/route.repository"
 
 /** REGRA DE NEGÒCIO SE ECONTRA AQUI, DAS ROTAS */
 
-class CreateRouteUseCase {
+export class CreateRouteUseCase {
 
     constructor(private routeRepo: RouteRepositoryInterface) {
 
