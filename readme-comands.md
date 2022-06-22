@@ -36,3 +36,7 @@
 
 8. Instalado Extensão "Jest Runner" pelo VSCODE, dentro do arquivo de teste ela mostra dois comandos: "RUN" e "DEBU
 G" dessa forma é só clikar em "RUN" para executar os testes
+
+9. npm install express --save (Lib para lidar com requisições verbos HTTP e outras coisinhas a mais)
+
+10. npm install @types/express --save-dev (tipagem do typescript)
