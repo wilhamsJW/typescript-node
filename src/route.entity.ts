@@ -65,6 +65,10 @@ export class Route {
     private set endPosition(value: LatLng) {
         this.props.endPosition = value
     }
+
+    toJSON() {
+        return this.props
+    }
 }
 
 const route = new Route({ 

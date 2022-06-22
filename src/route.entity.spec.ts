@@ -12,7 +12,7 @@ describe('Route Teste', () => {
     let globalRoute = new Route(routeProps)
 
     test('constructor', () => {
-        // Professor fez dessa forma, achei mais complicado
+        // const routeProps: RouteProps = {  -->> feito dessa forma pq o typescript analisa os tipo e verifica os dados
         // const routeProps: RouteProps = {
         //     title: 'minha rota',
         //     startPosition: {lat: 0, lng: 1},   
