@@ -1,5 +1,5 @@
 import { RouteInMemoryRepository } from "../infra/route-in-memory-repository"
-import { CreateRouteUseCase } from './create.route.use.case'
+import { CreateRouteUseCase } from './create-route-use-case'
 
 describe('CreateRouteUseCase Tests', () => {
 
