@@ -1,3 +1,4 @@
+import crypto from 'crypto'
 export type LatLng = {lat: Number, lng: number}
 
 export type RouteProps = {
@@ -8,11 +9,13 @@ export type RouteProps = {
 }
 
 export class Route {
+    public readonly id: string;
     public props: Required<RouteProps>
-        constructor( props: RouteProps ){
+        constructor( props: RouteProps, id?: string ){
         // ...props, --> repetindo todas as props que existem no meu construtor
         //  points: props.points || [] -> estou dizendo que props.points pode existir ou ser um array vazio
         // fiz isso pq inserir o Required acima que obriga todos a existirem mas eu quero q points seja opcional
+        this.id = id || crypto.randomUUID() 
         this.props = {
             ...props,
             points: props.points || []
@@ -67,7 +70,10 @@ export class Route {
     }
 
     toJSON() {
-        return this.props
+        return {
+            id: this.id,
+            ...this.props
+        }    
     }
 }
 

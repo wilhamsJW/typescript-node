@@ -40,3 +40,7 @@ G" dessa forma é só clikar em "RUN" para executar os testes
 9. npm install express --save (Lib para lidar com requisições verbos HTTP e outras coisinhas a mais)
 
 10. npm install @types/express --save-dev (tipagem do typescript)
+
+11. para que consiga ver o express rodando e seus log no terminal é necessário adicionar dentro do arquivo
+package.json na chave chamada "scripts" essa linha: "express": "ts-node src/http/express/index.ts" que indica o local q express está
+rodando --- após isso rode: `npm run express` 

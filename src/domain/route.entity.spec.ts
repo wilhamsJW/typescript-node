@@ -48,6 +48,7 @@ describe('Route Teste', () => {
                 { lat: 20, lng: 20 },
             ]
         });
+        expect(route.id).toBeDefined()
     });
 
     /************* Teste de atualização de título da rota */

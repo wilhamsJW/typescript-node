@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "express": "ts-node src/http/express/index.ts"
   },
   "repository": {
     "type": "git",
