@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import { CreateRouteUseCase } from "../../application/create-route-use-case"
-// import { ListAllRoutesUseCase } from "../application/";
+import { ListAllRouteUseCase } from "../../application/list-all-routes.use-case";
 import { RouteInMemoryRepository } from "../../infra/db/route-in-memory.repository";
 
 const app: Express = express();
@@ -9,11 +9,11 @@ const port = process.env.PORT || 3000;
 
 const routeRepo = new RouteInMemoryRepository();
 
-//app.get('/routes', async (_req: Request, res: Response) => {
-  //const listAllUseCase = new ListAllRoutesUseCase(routeRepo);
-  //const output = await listAllUseCase.execute();
-  //res.json(output);
-//})
+app.get('/routes', async (_req: Request, res: Response) => {
+  const listAllUseCase = new ListAllRouteUseCase(routeRepo);
+  const output = await listAllUseCase.execute();
+  res.json(output);
+})
 
 app.post("/routes", async (req: Request, res: Response) => {
   const createUseCase = new CreateRouteUseCase(routeRepo);
