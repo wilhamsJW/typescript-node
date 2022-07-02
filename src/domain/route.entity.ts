@@ -1,4 +1,4 @@
-import crypto from 'crypto'
+import crypto from 'crypto' // responsável fazer uma hash tipo essa: "id": "97eaf96d-1002-447d-a81e-b04921fd3e47"
 export type LatLng = {lat: Number, lng: number}
 
 export type RouteProps = {
@@ -15,7 +15,7 @@ export class Route {
         // ...props, --> repetindo todas as props que existem no meu construtor
         //  points: props.points || [] -> estou dizendo que props.points pode existir ou ser um array vazio
         // fiz isso pq inserir o Required acima que obriga todos a existirem mas eu quero q points seja opcional
-        this.id = id || crypto.randomUUID() 
+        this.id = id || crypto.randomUUID() // responsável fazer uma hash tipo essa: "id": "97eaf96d-1002-447d-a81e-b04921fd3e47"
         this.props = {
             ...props,
             points: props.points || []
